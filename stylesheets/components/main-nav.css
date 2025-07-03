@@ -1,1 +1,19 @@
 /* Your code here */
+.navigation__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 8px;
+}
+
+.navigation__item {
+    font-size: 14px;
+}
+
+@media screen and (max-width: 1200px) {
+    .navigation__list {
+        display: none;
+    }
+}

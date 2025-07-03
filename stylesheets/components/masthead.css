@@ -1,1 +1,91 @@
 /* Your code here */
+.masthead {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "menu-and-search . actions"
+        ". technologies ."
+        "date logo paper";
+}
+
+.masthead__menu-and-search {
+    grid-area: menu-and-search;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.masthead__actions {
+    grid-area: actions;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.masthead__menu-and-search, .masthead__actions {
+    padding-top: 8px;
+}
+
+.masthead__technologies {
+    grid-area: technologies;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+}
+
+.masthead__technologies__container {
+    border: 1px solid #e2e2e2;
+    border-bottom: none;
+    position: relative;
+    top: 1px;
+    background-color: white;
+}
+
+.masthead__date {
+    grid-area: date;
+    display: flex;
+    align-items: flex-end;
+}
+
+.masthead__logo {
+    grid-area: logo;
+    padding-top: 20px;
+}
+
+.masthead__paper {
+    grid-area: paper;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 6px;
+}
+
+.masthead__button {
+    font-size: 11px;
+    padding: 7px 9px;
+}
+
+.masthead__button:hover {
+    background-color: #f7f7f5;
+}
+
+.masthead__technology {
+    text-transform: uppercase;
+    font-size: 10px;
+    color: #6f6f6f;
+    margin: 0 4px;
+}
+
+.masthead__date,
+.masthead__logo,
+.masthead__paper {
+    border-bottom: 1px solid #e2e2e2;
+    padding-bottom: 11px;
+    border-top: 1px solid #e2e2e2;
+}
+
+@media screen and (max-width: 1200px) {
+    .masthead__actions > button {
+        display: none;
+    }
+}

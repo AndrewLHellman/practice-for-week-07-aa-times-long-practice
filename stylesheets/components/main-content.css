@@ -1,1 +1,266 @@
 /* Your code here */
+main {
+    display: grid;
+    grid-template:
+        [row1-start] "main main sidebar" auto [row1-end]
+        [row2-start] "articles articles sidebar" auto [row2-end]
+        [row3-start] "articles articles more" 1fr [row3-end]
+        [row4-start] "none none more" auto [row4-end]
+        / 1fr 1fr 1fr;
+    margin-top: 10px;
+}
+
+main > * {
+    align-self: start;
+    justify-content: start;
+}
+
+.article__header {
+    margin: 0;
+}
+
+.section__main {
+    grid-area: main;
+    display: grid;
+    grid-template:
+        [row1-start] "header header" auto [row1-end]
+        [row2-start] "article video" auto [row2-end]
+        / 1fr auto;
+    padding: 0 8px 64px 0;
+    border-bottom: 1px black solid;
+}
+
+.article__header {
+    margin: 0;
+    padding: 0;
+}
+
+.section__articles {
+    grid-area: articles;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    border-bottom: 1px black solid;
+}
+
+.section__sidebar {
+    grid-area: sidebar;
+}
+
+.section__more {
+    grid-area: more;
+    display: grid;
+    grid-template:
+        [row1-start] "torvalds thompson" auto[row1-end]
+        [row2-start] "knuth thompson" auto [row2-end]
+        [row3-start] "knuth carmack" auto [row3-end]
+        [row4-start] "lovelace carmack" auto [row4-end]
+        [row5-start] "lovelace stallman" auto [row5-end]
+        [row6-start] "hopper stallman" auto [row6-end]
+        / 1fr 1fr;
+    grid-auto-flow: column;
+    align-items: center;
+}
+
+@media screen and (max-width:1200px) {
+    main {
+        grid-template:
+        [row1-start] "main" auto [row1-end]
+        [row2-start] "articles" auto [row2-end]
+        / 1fr;
+    }
+
+    .section__sidebar {
+        display: none;
+    }
+
+    .section__more {
+        display: none;
+    }
+}
+
+.section__sidebar, .section__more {
+    padding: 0 12px;
+    border-left: 1px #e2e2e2 solid;
+}
+
+.section__main .section__header {
+    margin-bottom: 16px;
+    font-size: 26px;
+    line-height: normal;
+    font-style: italic;
+    font-weight: 1000;
+    grid-area: header;
+}
+
+.section__main .article__title {
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 1000;
+    line-height: 24px;
+    margin-bottom: 22px;
+}
+
+.section__main ul {
+    list-style-type: disc;
+    padding-left: 16px;
+    font-size: 12px;
+    word-spacing: 0.3px;
+    margin-bottom: 12px;
+}
+
+.section__main li {
+    padding-top: 8px;
+}
+
+.article__footer {
+    padding: 0;
+    font-size: 12px;
+    color: #326891;
+}
+
+.section__main iframe {
+    width: 100%;
+    background-color: black;
+}
+
+.section__main figure {
+    width: 390px;
+    margin: 0 0 0 8px;
+}
+
+.section__main figcaption {
+    font-size: 12px;
+}
+
+.article__byline {
+    color: gray;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+    padding-bottom: 8px;
+}
+
+.section__main article {
+    grid-area: article;
+}
+
+.section__main figure {
+    grid-area: video;
+}
+
+.section__articles > * {
+    padding: 12px;
+}
+
+.section__articles article {
+    font-size: 14px;
+}
+
+.section__articles > *:not(:first-child) {
+    border-left: 2px solid #e2e2e2;
+}
+
+.article__title {
+    font-weight: 1000;
+    font-size: 16px;
+    padding-bottom: 8px;
+}
+
+.section__sidebar header {
+    padding: 0;
+}
+
+.sidebar__title {
+    font-size: 24px;
+    font-weight: 1000;
+    line-height: normal;
+    padding-bottom: 12px;
+}
+
+.section__sidebar p {
+    font-size: 12px;
+}
+
+.section__sidebar .article__title {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.article__opinions p {
+    margin: 0 0 24px;
+}
+
+.section__sidebar .article {
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.article__opinions {
+    padding-bottom: 4px;
+}
+
+.article__operations {
+    padding: 4px 0 16px;
+}
+
+.article__operations h1 {
+    font-size: 10px;
+}
+
+.article__image {
+    height: 96px;
+    object-fit: cover;
+}
+
+.article__operations p {
+    padding: 8px 0;
+}
+
+.torvalds {
+    grid-area: torvalds;
+}
+
+.thompson {
+    grid-area: thompson;
+}
+
+.knuth {
+    grid-area: knuth;
+}
+
+.carmack {
+    grid-area: carmack;
+}
+
+.lovelace {
+    grid-area: lovelace;
+}
+
+.stallman {
+    grid-area: stallman;
+}
+
+.hopper {
+    grid-area: hopper;
+}
+
+.article__preview:nth-child(-n+4) {
+    border-right: 1px solid #e2e2e2;
+}
+
+.preview__border {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0 8px;
+    padding: 8px 0;
+}
+
+.preview__border:not(.noborder) {
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.article__preview .article__title {
+    font-size: 14px;
+}
+
+.article__preview .article__byline {
+    padding: 0;
+}

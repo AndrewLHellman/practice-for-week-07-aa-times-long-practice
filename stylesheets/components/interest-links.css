@@ -1,1 +1,83 @@
 /* Your code here */
+.interests-bar {
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr 2fr 1.75fr;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 8px;
+    align-items: center;
+}
+
+.interests-bar__section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    border-right: 1px solid #e2e2e2;
+}
+
+.interests-bar__section:last-child {
+    border-right: none;
+}
+
+.interests-bar__section.weather {
+    grid-template-columns: 1fr 0.75fr;
+}
+
+.interests-bar__copy {
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.interests-bar__headline {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.interests-bar__story {
+    font-size: 14px;
+}
+
+.interests-bar__image {
+    padding: 1vw;
+}
+
+.interests-bar__section.stocks {
+    display: block;
+    align-self: stretch;
+}
+
+.interests-bar__stocks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    padding: 0 1vw;
+}
+
+.interests-bar__stock-price {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: 1px solid #e2e2e2;
+    padding-bottom: 2px;
+}
+
+.interests-bar__stock-price:last-child {
+    border-bottom: none;
+}
+
+.interests-bar__price {
+    justify-self: flex-end;
+    color: green;
+    font-weight: bold;
+}
+
+.interests-bar__big-text {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 1000px) {
+    .interests-bar {
+        display: none;
+    }
+}
